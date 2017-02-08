@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {TodoAddContainer}  from '../containers/TodoAdd.js';
+import TodoAddContainer from '../containers/TodoAdd.js';
 
-import {TodoListContainer} from '../containers/TodoList.js';
+import TodoListContainer from '../containers/TodoList.js';
 
 
 

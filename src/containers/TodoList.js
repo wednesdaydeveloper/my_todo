@@ -14,7 +14,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export const TodoListContainer = connect(
+const TodoListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(TodoList);
+
+export default TodoListContainer;

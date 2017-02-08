@@ -7,7 +7,7 @@ http://qiita.com/erukiti/items/e16aa13ad81d5938374e
 
 
 import Todo from './components/Todo.jsx';
-import { store } from './Store.js';
+import store from './Store.js';
 
 
 import { Provider } from 'react-redux';

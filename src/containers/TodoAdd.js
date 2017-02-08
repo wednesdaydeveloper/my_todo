@@ -15,7 +15,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export const TodoAddContainer = connect(
+const TodoAddContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(TodoAdd);
+
+export default TodoAddContainer;
