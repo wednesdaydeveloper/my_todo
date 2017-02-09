@@ -6,7 +6,7 @@ import Footer from '../components/Footer.jsx';
 
 
 
-const Todo = () => (
+const App = () => (
 	<div>
 		<TodoAddContainer />
 		<TodoListContainer />
@@ -14,4 +14,4 @@ const Todo = () => (
 	</div>
 );
 
-export default Todo;
+export default App;

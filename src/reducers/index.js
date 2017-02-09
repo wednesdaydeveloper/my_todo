@@ -3,10 +3,7 @@ import { ADD_TODO, DEL_TODO } from '../actions/index.js';
 
 
 const initState = {
-  todos: [
-    {todo:"foo", flag:true , createAt: null, deleteAt: null},
-    {todo:"bar", flag:false, createAt:null, deleteAt: null}
-  ]
+  todos: []
 };
 
 const reducer = handleActions(

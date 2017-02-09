@@ -6,7 +6,7 @@ http://qiita.com/erukiti/items/e16aa13ad81d5938374e
 */
 
 
-import Todo from './components/Todo.jsx';
+import App from './components/App.jsx';
 import store from './Store.js';
 
 
@@ -15,7 +15,7 @@ import {render} from 'react-dom';
 
 render(
   <Provider store = { store } >
-    <Todo />
+    <App />
   </Provider>,
 	document.getElementById('app')
 );
