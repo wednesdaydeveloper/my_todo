@@ -9,11 +9,14 @@ const initState = {
   ]
 };
 
-export const reducer = handleActions(
+const reducer = handleActions(
   {
     ADD_TODO: (state, action) => {
       return { 
-          todos: state.todos.concat([{todo:action.payload, flag:true, createAt: new Date(), deleteAt: null }])
+          todos: [
+            ...state.todos,
+            {todo:action.payload, flag:true, createAt: new Date(), deleteAt: null }
+          ] 
         };
     },
     DEL_TODO: (state, action) => {
@@ -22,3 +25,5 @@ export const reducer = handleActions(
       return { todos: state.todos.slice(0) };
     }
   }, initState);
+  
+export default reducer;
