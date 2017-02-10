@@ -1,26 +1,39 @@
 import { handleActions } from 'redux-actions';
+import { combineReducers } from 'redux';
 import { ADD_TODO, DEL_TODO } from '../actions/index.js';
 
 
-const initState = {
-  todos: []
-};
+const initState = [
+    {id: -1, text: 'aaa', completed:false, createAt: new Date(), deleteAt: null },
+    {id: -2, text: 'bbb', completed:false, createAt: new Date(), deleteAt: null },
+    {id: -3, text: 'ccc', completed:false, createAt: new Date(), deleteAt: null },
+  ];
 
-const reducer = handleActions(
+let currentId = 0;
+
+const todos = handleActions(
   {
     ADD_TODO: (state, action) => {
-      return { 
-          todos: [
-            ...state.todos,
-            {todo:action.payload, flag:true, createAt: new Date(), deleteAt: null }
-          ] 
-        };
+      return [
+            ...state,
+            {id: currentId++, text:action.payload, completed:false, createAt: new Date(), deleteAt: null }
+          ];
     },
     DEL_TODO: (state, action) => {
-      state.todos[action.payload].flag = false;
-      state.todos[action.payload].deleteAt = new Date();
-      return { todos: state.todos.slice(0) };
+      return state.map(t =>
+          t.id === action.payload ? {...t, completed: true, deleteAt: new Date()} : t
+        );
     }
   }, initState);
   
-export default reducer;
+
+const visibilityFilter = handleActions({
+  SET_VISIBILITY_FILTER: (state, action) => {
+    return action.payload;
+  }
+}, 'SHOW_ALL');
+
+export default combineReducers({
+  todos,
+  visibilityFilter
+});

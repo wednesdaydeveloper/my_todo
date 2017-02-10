@@ -2,16 +2,16 @@ import React from 'react';
 
 export default class TodoAdd extends React.Component {
 
-  handleKeyDown(e) {
-    if (e.keyCode === 13) { // Enter の場合のみ
-        this._onAddToDo();
-    }
-  }
+	handleKeyDown(e) {
+		if (e.keyCode === 13) { // Enter の場合のみ
+			this._onAddToDo();
+		}
+	}
 
 	_onAddToDo(){
 		var newTodo = this.refs.todo.value.trim();
 		if (newTodo) {
-  		this.props.onAddToDo(newTodo);
+			this.props.onAddToDo(newTodo);
 		}
 		this.refs.todo.value="";
 	}

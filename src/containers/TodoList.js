@@ -4,12 +4,13 @@ import {delTodo} from '../actions/index.js';
 
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
+
 function mapDispatchToProps(dispatch) {
   return {
-    onDelToDo: (text) => { 
-      dispatch(delTodo(text)) 
+    onDelToDo: (id) => { 
+      dispatch(delTodo(id)); 
     },
   };
 }
